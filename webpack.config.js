@@ -1,5 +1,6 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/main.js'],
@@ -8,9 +9,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from: 'src/assets', to: 'assets'},
+      'src/styles.css',
+    ])
   ],
   module: {
     rules: [

@@ -5,9 +5,42 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles.css">
   <title>Tetris</title>
 </head>
 <body>
-  <h1>My Testris in pure JS</h1>
+  <div class="container">
+    <h2 class="score-title">Score: <span id="score">0</span></h2>
+    <canvas id="tetris" width="200" height="400"></canvas>
+
+    <div class="nextTetromino-wrapper">
+      <canvas id="nextTetromino" width="0" height="0"></canvas>
+    </div>
+  </div>
+
+  <div class="hint">
+    <ul>
+      <li>Left Arrow - moves tetromino left</li>
+      <li>Right Arrow - moves tetromino right</li>
+      <li>Down Arrow - moves tetromino down (hold to drop it down)</li>
+      <li>Space - rotates tetromino</li>
+    </ul>
+  </div>
+
+  <div class="modal">
+    <h1 class="modal__title">Want to play again? Just reload the page!</h1>
+    <table id="score-table">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <iframe src="https://raw.githubusercontent.com/anars/blank-audio/master/250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" hidden></iframe>
+  <audio src="assets/tetris.mp3" autoplay loop></audio>
 </body>
 </html>
