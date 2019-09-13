@@ -43,9 +43,12 @@ export class Tetris extends EventEmitter {
         this.drawSquare(c, r, Color.white);
       }
     }
+  }
 
+  start() {
     /** @type {Tetromino} */ this.activeTetromino = this.genRandomTetromino();
     /** @type {Tetromino} */ this.nextTetromino = this.genRandomTetromino();
+    this.emit('nextTetromino', this.nextTetromino);
     this.drawTetromino(this.activeTetromino);
     this.startFalling(this.activeTetromino);
   }

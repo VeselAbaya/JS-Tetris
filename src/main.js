@@ -61,5 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, c, r, state[r][c] ? tetromino.color : Color.white);
       }
     }
-  })
+  });
+
+  tetris.start();
 });

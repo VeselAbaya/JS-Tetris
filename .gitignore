@@ -4,3 +4,6 @@ dist
 .idea
 
 tetris.*
+
+
+npm-debug.log
